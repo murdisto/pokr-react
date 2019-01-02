@@ -1,4 +1,4 @@
-import {FETCH_LOCATIONS_REQUEST, FETCH_LOCATIONS_SUCCESS, FETCH_LOCATIONS_ERROR} from '../actions/location'
+import * as actions  from '../actions/location'
 
 const initialState = {
   locations: [],
@@ -6,26 +6,34 @@ const initialState = {
   error: null,
 };
 
+// action list:{
+// FETCH_LOCATIONS_REQUEST,
+// FETCH_LOCATIONS_SUCCESS,
+// FETCH_LOCATIONS_ERROR
+// }
+
 export const locationReducer = (state=initialState, action) => {
-  switch (action.type) {
-    case FETCH_LOCATIONS_REQUEST :
-    return Object.assign({}, state, { loading: true })
+  if (action.type === actions.FETCH_LOCATIONS_REQUEST) {
+      return Object.assign({}, state, { loading: true });
+    }
 
-    case FETCH_LOCATIONS_SUCCESS :
-    return Object.assign({}, state, {
-      loading: false,
-      locations: action.data,
-      error: null
-    })
+  if (action.type === actions.FETCH_LOCATIONS_SUCCESS) {
+      return Object.assign({}, state, {
+        locations: action.data,
+        error: null,
+        loading: false
+      });
+    }
 
-    case FETCH_LOCATIONS_ERROR :
-    return Object.assign({}, state, {
-      loading: true,
-      error: action.error
-    })
+    if (action.type === actions.FETCH_LOCATIONS_ERROR) {
+        return Object.assign({}, state, {
+          error: action.error,
+          loading: true
+        });
+      }
 
-    default: return state
-  }
+    return state;
+
 }
 
 export default locationReducer;

@@ -27,7 +27,7 @@ export default function fetchLocations() {
         return res.json();
       })
       .then(data => {
-        console.log("the data is", data);
+        //console.log("the data is", data);
         dispatch(fetchLocationsSuccess(data))
       }
       )

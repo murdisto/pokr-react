@@ -27,9 +27,8 @@ export class LocationList extends React.Component {
 }
 
 const mapStatetoProps = state => {
-  
   return {
-    locations: state.locations
+    locations: state.locationReducer.locations
   }
 }
 
