@@ -1,4 +1,4 @@
-import {API_BASE_URL} from '../config';
+import {BASE_URL} from '../config';
 
 
 export const FETCH_LOCATIONS_REQUEST = 'FETCH_LOCATIONS_REQUEST';
@@ -21,7 +21,7 @@ export const fetchLocationsError = (err) => ({
 export default function fetchLocations() {
   return dispatch => {
     dispatch(fetchLocationsRequest());
-    fetch(`${API_BASE_URL}/locations`)
+    fetch(`${BASE_URL}/`)
       .then(res => {
         if (!res.ok) return Promise.reject(res.statusText);
         return res.json();
