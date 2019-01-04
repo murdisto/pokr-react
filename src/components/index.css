@@ -1,3 +1,8 @@
 ul {
   list-style-type: none;
 }
+
+.session {
+  background-color: lightgrey;
+  
+}

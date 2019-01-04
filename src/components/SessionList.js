@@ -17,11 +17,14 @@ export class SessionList extends React.Component {
 
 
 
+
   render () {
     // if(this.props.sessionsPending){
     //   console.log('sessions pending');
     //   return (<p>Pending</p>)
     // }
+
+    
 
     let { sessions } = this.props;
     // if (this.state.visibleId) {

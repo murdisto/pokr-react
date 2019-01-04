@@ -7,10 +7,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-
-
         <Form />
-
         <h3>previous sessions</h3>
         <SessionList />
       </div>
