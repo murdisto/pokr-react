@@ -3,11 +3,9 @@ import './index.css';
 
 
 export default class Session extends React.Component {
-
     state = {
       visible: false,
     }
-
 
   handleToggleVisible() {
     this.setState(
@@ -15,7 +13,6 @@ export default class Session extends React.Component {
         visible: !this.state.visible,
       }
     )
-
   }
 
   render() {

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form'
 import _ from 'lodash';
-import submitSession from '../actions/index'
+import {submitSession} from '../actions/index'
 
 const required = value => (value || typeof value === 'number' ? undefined : 'Required')
 
@@ -24,6 +24,7 @@ const renderField = ({
 
 class Form extends React.Component {
   onSubmit(values){
+    console.log("the values are ", values);
     this.props.dispatch(submitSession(values))
   }
 
@@ -33,8 +34,9 @@ render(){
   return (
     <form onSubmit={this.props.handleSubmit(values => {
       this.onSubmit(values);
-      console.log(values);
+      //console.log(values);
     })}>
+
       <div>
         <label></label>
 
@@ -103,13 +105,13 @@ render(){
           <Field name="hours" component="select" validate={[required]} warn={required}>
           <option value="">select hours</option>
 
-            {_.times(25, i =>
+            {_.times(24, i =>
               <option value={i} key={i}>{i}</option>
             )}
           </Field>
           <Field name="minutes" component="select" validate={[required]} warn={required}>
             <option value="">select minutes</option>
-            {_.times(61, i =>
+            {_.times(60, i =>
               <option value={i} key={i}>{i}</option>
             )}
 

@@ -7,16 +7,10 @@ import Session from './Session'
 
 
 export class SessionList extends React.Component {
-
-
-
   componentDidMount() {
     console.log("in componentdidmount");
     this.props.dispatch(fetchSessions());
   }
-
-
-
 
   render () {
     // if(this.props.sessionsPending){
@@ -24,14 +18,12 @@ export class SessionList extends React.Component {
     //   return (<p>Pending</p>)
     // }
 
-    
-
-    let { sessions } = this.props;
     // if (this.state.visibleId) {
     //   sessions = sessions.filter(session => {
     //     return this.state.visibleId === session.id;
     //   })
     // }
+    let { sessions } = this.props;
     console.log("in SessionList", sessions);
     const session = sessions.map( (session, index) => (
       <Session session={session} key={index} />

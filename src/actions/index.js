@@ -34,14 +34,19 @@ export const fetchSessionError = (err) => ({
   err
 });
 
-export default function submitSession(values) {
-  return dispatch => {
+export const submitSession = (values) => (dispatch, getState) => {
+  console.log("this is inside submitSession");
+  const authToken = getState().auth.authToken;
+  //console.log("the authToken is ", authToken);
+
+    console.log("something is in submitSession");
     dispatch(submitSessionRequest());
-    fetch(`${BASE_URL}/`, {
+    fetch(`${BASE_URL}/sessions`, {
         method: "POST",
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
+            Authorization: `Bearer ${authToken}`
         },
         body: JSON.stringify(values)
     })
@@ -55,14 +60,19 @@ export default function submitSession(values) {
       }
       )
       .catch(err => dispatch(submitSessionError(err)))
-  }
+
 }
 
-export function fetchSessions() {
+export const fetchSessions = () => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  //
   console.log("in fetchSessions");
-  return dispatch => {
+  console.log("the authToken is ", authToken);
+
     dispatch(fetchSessionRequest());
-    fetch(`${BASE_URL}/`)
+    fetch(`${BASE_URL}/sessions`, {
+      headers: {Authorization: `Bearer ${authToken}`}
+    })
       .then(res => {
         if (!res.ok) return Promise.reject(res.statusText);
         return res.json();
@@ -73,5 +83,7 @@ export function fetchSessions() {
       }
       )
       .catch(err => dispatch(fetchSessionError(err)))
-  }
+
 }
+
+export default submitSession;
