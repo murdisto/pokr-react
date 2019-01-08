@@ -24,7 +24,7 @@ export default class Session extends React.Component {
     })();
 
     const hoursPlayed = (() => {
-      return hours + minutes/60;
+      return Math.round((hours + minutes/60) * 100) / 100;
     })(); //'member IIFEs??
 
    const hourlyRate = (() => {

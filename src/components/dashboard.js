@@ -17,10 +17,6 @@ export class Dashboard extends React.Component {
         <div className="dashboard-username">
                     Username: {this.props.username}
         </div>
-
-        <div className="dashboard-protected-data">
-                    Protected data: {this.props.protectedData}
-        </div>
         <Form />
         <h3>previous sessions</h3>
         <SessionList />
