@@ -1,0 +1,26 @@
+.logout {
+  color: white;
+}
+
+.navigation {
+  position: fixed;
+  background: #262626;
+  border-bottom: solid 1px red;
+  width: 100%;
+}
+
+.title {
+  color: red;
+  display: inline-block;
+  padding-left: 20px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  font-weight: bolder;
+  margin: 10px;
+}
+
+.nav-list {
+  float: right;
+  display: inline-block;
+  margin: 10px;
+}

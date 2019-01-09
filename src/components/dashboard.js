@@ -14,9 +14,9 @@ export class Dashboard extends React.Component {
   render() {
     return (
       <div className="dashboard">
-        <div className="dashboard-username">
+         {/* <div className="dashboard-username">
                     Username: {this.props.username}
-        </div>
+        </div> */} 
         <Form />
         <h3>previous sessions</h3>
         <SessionList />
