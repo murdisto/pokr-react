@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import SessionList from './SessionList'
+import HeaderBar from './header-bar';
 import Form from './form'
 import './dashboard.css';
 
@@ -15,12 +16,16 @@ export class Dashboard extends React.Component {
 
   render() {
     return (
-      <div className="dashboard">
-         {/* <div className="dashboard-username">
-                    Username: {this.props.username}
-        </div> */}
-        <Form />
-        <SessionList />
+      <div>
+        <HeaderBar />
+        <div className="dashboard">
+
+           {/* <div className="dashboard-username">
+                      Username: {this.props.username}
+          </div> */}
+          <Form />
+          <SessionList />
+        </div>
       </div>
     );
   }
