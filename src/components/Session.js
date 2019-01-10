@@ -34,9 +34,16 @@ export default class Session extends React.Component {
     return(
       <div>
         <li onClick={this.handleToggleVisible.bind(this)}>
-         <div className="session"> {date} {location} {result > 0 ? "+$" + result : "-$" + result * -1}</div>
+
+          <div className={result > 0 ? "session positive" : "session negative"}>
+          <span className="left">{date} {location} </span>
+          
+          <span className="right">  {result > 0 ? "+$" + result : "-$" + result * -1}</span>
+          </div>
+
+
           {this.state.visible && (
-            <div>
+            <div className="subItem">
             <ul>
               <li>In: ${cashIn}</li>
               <li>Out: ${cashOut}</li>

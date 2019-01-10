@@ -4,6 +4,8 @@ import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import SessionList from './SessionList'
 import Form from './form'
+import './dashboard.css';
+
 
 
 export class Dashboard extends React.Component {
@@ -16,9 +18,8 @@ export class Dashboard extends React.Component {
       <div className="dashboard">
          {/* <div className="dashboard-username">
                     Username: {this.props.username}
-        </div> */} 
+        </div> */}
         <Form />
-        <h3>previous sessions</h3>
         <SessionList />
       </div>
     );

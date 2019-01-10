@@ -1,5 +1,15 @@
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
+
+}
+
+*:focus {
+outline: none
+}
+
+input:focus {
+  background-color: white;
+  border: 3px solid white;
 }
 
 html {
@@ -19,8 +29,10 @@ ul {
   list-style-type: none;
 }
 
-.session {
-  background-color: lightgrey;
+
+
+input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px white;
 }
 
 @media screen and (min-width: 800px) {

@@ -2,43 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {fetchSessions} from '../actions/index'
 import { connect } from 'react-redux';
-import './index.css'
+import './SessionList.css'
 import Session from './Session'
 
 
 export class SessionList extends React.Component {
   componentDidMount() {
-    console.log("in componentdidmount");
+    //console.log("in componentdidmount");
     this.props.dispatch(fetchSessions());
   }
 
   render () {
-    // if(this.props.sessionsPending){
-    //   console.log('sessions pending');
-    //   return (<p>Pending</p>)
-    // }
-
-    // if (this.state.visibleId) {
-    //   sessions = sessions.filter(session => {
-    //     return this.state.visibleId === session.id;
-    //   })
-    // }
     let { sessions } = this.props;
-    console.log("in SessionList", sessions);
+    //console.log("in SessionList", sessions);
     const session = sessions.map( (session, index) => (
       <Session session={session} key={index} />
     ));
 
     return (
-      <ul className="session-list" >
-        {session}
-      </ul>
+      <div>
+        <h3>previous sessions</h3>
+        <ul className="session-list" >
+          {session}
+        </ul>
+      </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  console.log("mapStateToProps: the state is: ", state);
+  //console.log("mapStateToProps: the state is: ", state);
   return {
     sessions: state.sessionReducer.sessions
   }

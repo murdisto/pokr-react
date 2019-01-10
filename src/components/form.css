@@ -1,0 +1,66 @@
+form {
+  background-color: gray;
+  padding: 10px;
+  width: 67%;
+  margin: auto;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px #000;
+}
+
+form button  {
+  background-color: red;
+  color: white;
+  border: 1px solid red;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 35px;
+  box-shadow: 0px 2px 10px #000;
+
+}
+
+input::placeholder{
+  color: grey;
+}
+
+input, select {
+  background-color: #333;
+  color: grey;
+  height: 26px;
+  width: 100%;
+
+  border: 3px solid #333;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  box-shadow: 0px 1px 1px #000;
+
+}
+@media(min-width:600px){
+
+  form {
+    width: 33%;
+    margin:auto;
+  }
+
+  .session-list {
+    width: 50%;
+    margin:auto;
+  }
+
+  form input {
+    background-color: #333;
+    width: 75%;
+    margin: auto;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  form select {
+    background-color: #333;
+    width: 75%;
+    margin: auto;
+    display: block;
+    margin-bottom: 5px;
+  }
+}

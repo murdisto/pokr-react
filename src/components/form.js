@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form'
 import _ from 'lodash';
 import {submitSession} from '../actions/index'
+import './form.css'
 
 const required = value => (value || typeof value === 'number' ? undefined : 'Required')
 

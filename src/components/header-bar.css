@@ -1,5 +1,7 @@
-.logout {
+button.logout {
   color: white;
+  background-color: #333;
+  border: none;
 }
 
 .navigation {

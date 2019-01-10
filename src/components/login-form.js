@@ -31,6 +31,7 @@ export class LoginForm extends React.Component {
           type="text"
           name="username"
           id="username"
+          placeholder="username"
           validate={[required, nonEmpty]}
         />
         <label htmlFor="password">Password</label>
