@@ -35,11 +35,11 @@ export const fetchSessionError = (err) => ({
 });
 
 export const submitSession = (values) => (dispatch, getState) => {
-  console.log("this is inside submitSession");
+  //console.log("this is inside submitSession");
   const authToken = getState().auth.authToken;
   //console.log("the authToken is ", authToken);
 
-    console.log("something is in submitSession");
+    //console.log("something is in submitSession");
     dispatch(submitSessionRequest());
     fetch(`${BASE_URL}/sessions`, {
         method: "POST",
@@ -66,8 +66,8 @@ export const submitSession = (values) => (dispatch, getState) => {
 export const fetchSessions = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   //
-  console.log("in fetchSessions");
-  console.log("the authToken is ", authToken);
+  //console.log("in fetchSessions");
+  //console.log("the authToken is ", authToken);
 
     dispatch(fetchSessionRequest());
     fetch(`${BASE_URL}/sessions`, {
@@ -78,7 +78,7 @@ export const fetchSessions = () => (dispatch, getState) => {
         return res.json();
       })
       .then(sessions => {
-        console.log("the session is", sessions);
+        //console.log("the session is", sessions);
         dispatch(fetchSessionSuccess(sessions))
       }
       )
