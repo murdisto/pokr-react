@@ -25,7 +25,7 @@ const renderField = ({
 
 class Form extends React.Component {
   onSubmit(values){
-    console.log("the values are ", values);
+    //console.log("the values are ", values);
     this.props.dispatch(submitSession(values))
   }
 
@@ -33,14 +33,14 @@ render(){
 
 
   return (
-    <form onSubmit={this.props.handleSubmit(values => {
+    <form className="sessionForm"
+     onSubmit={this.props.handleSubmit(values => {
       this.onSubmit(values);
       //console.log(values);
     })}>
 
       <div>
-        <label></label>
-
+        <label htmlFor="location" aria-label="location">Location</label>
           <Field
             name="location"
             component={renderField}
@@ -48,8 +48,8 @@ render(){
             placeholder="Location"
             validate={[required]}
             warn={required}
-
           />
+          <label htmlFor="date">Date</label>
           <Field
             name="date"
             component={renderField}
@@ -63,12 +63,14 @@ render(){
 
       <div>
         <div>
+          <label htmlFor="game">Game</label>
           <Field name="game" component="select" validate={[required]} warn={required}>
             <option value="">select game</option>
             <option value="NLHE">NLHE</option>
             <option value="PLO">PLO</option>
             <option value="LHE">LHE</option>
           </Field>
+          <label htmlFor="stakes">Stakes</label>
           <Field name="stakes" component="select" validate={[required]} warn={required}>
             <option value="game">select stakes</option>
             <option value="1-2">1-2</option>
@@ -79,7 +81,7 @@ render(){
       </div>
 
       <div>
-        <label></label>
+        <label htmlFor="cashIn">Cash In</label>
         <div>
           <Field
             name="cashIn"
@@ -89,6 +91,7 @@ render(){
             validate={[required]}
             warn={required}
           />
+          <label htmlFor="cashOut">Cash Out</label>
           <Field
             name="cashOut"
             component={renderField}
@@ -101,8 +104,8 @@ render(){
       </div>
 
       <div>
-        <label></label>
         <div>
+        <label htmlFor="hours">Hours</label>
           <Field name="hours" component="select" validate={[required]} warn={required}>
           <option value="">select hours</option>
 
@@ -110,6 +113,7 @@ render(){
               <option value={i} key={i}>{i}</option>
             )}
           </Field>
+          <label htmlFor="minutes">Minuts</label>
           <Field name="minutes" component="select" validate={[required]} warn={required}>
             <option value="">select minutes</option>
             {_.times(60, i =>
@@ -119,8 +123,6 @@ render(){
           </Field>
         </div>
       </div>
-
-
       <div>
         <button type="submit" disabled={this.props.pristine || this.props.submitting}>
           Submit

@@ -6,7 +6,6 @@ import App from './components/app';
 
 import store from './store';
 import {Provider} from 'react-redux';
-//import Locations from './components/location-list';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

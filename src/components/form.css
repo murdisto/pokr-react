@@ -8,6 +8,11 @@ form {
   box-shadow: 0px 2px 10px #000;
 }
 
+.sessionForm label {
+  color: red;
+  display: none;
+}
+
 form button  {
 
   background-color: red;
@@ -23,12 +28,12 @@ form button  {
 }
 
 input::placeholder{
-  color: grey;
+  color: white;
 }
 
 input, select {
   background-color: #333;
-  color: grey;
+  color: white;
   height: 26px;
   width: 100%;
 
