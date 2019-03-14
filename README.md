@@ -9,6 +9,19 @@
 <img src="/screenShots/pokrSignIn.png" alt="sign in" width="400px" />
 <img src="/screenShots/pokrDashboard.png" alt="" width="400px" />
 
+## API
+```        
+├── /auth
+│   └── POST
+│       ├── /login
+│       ├── /refresh
+├── /users
+│   └── POST /
+├── /sessions
+│   └── GET /
+│   └── POST /
+``` 
+
 ## Tech Stack:
   Pokr is a full-stack app built with the MERN stack.
 
