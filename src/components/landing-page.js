@@ -16,6 +16,12 @@ export function LandingPage(props) {
       <p className='landingInfo'>a simple app to track your poker sessions.</p>
       <LoginForm />
       Not signed up? <Link to="/register">Register</Link>
+      <br />
+      Just want to demo the app? Use these: 
+      <br />
+      Username: demo
+      <br />
+      Password: password
     </div>
   );
 }
